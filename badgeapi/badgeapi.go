@@ -54,7 +54,7 @@ func main() {
 				label = strings.ToUpper(label)
 				message = strings.ToUpper(message)
 
-				r.ResponseHeaders().Set("Cache-Control", "max-age=86400, public")
+				r.ResponseHeaders().Set("Cache-Control", "public, max-age=604800, immutable")
 
 				buf := bytebufferpool.Get()
 				defer bytebufferpool.Put(buf)
