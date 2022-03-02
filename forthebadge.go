@@ -7,7 +7,7 @@ import (
 )
 
 func TextWidth(s string) float64 {
-	return float64(len(s)) * 9.256
+	return float64(len(s)) * 8.15
 }
 
 // SVG Code From: https://github.com/badges/shields/blob/814aa30da413f10959d007202cca1cc5a823e688/badge-maker/lib/badge-renderers.js
