@@ -11,7 +11,7 @@ func TextWidth(s string) float64 {
 }
 
 // SVG Code From: https://github.com/badges/shields/blob/814aa30da413f10959d007202cca1cc5a823e688/badge-maker/lib/badge-renderers.js
-func WriteForTheBadge(w io.Writer, label, message, color string) {
+func WriteForTheBadge(w io.Writer, label, message, messageFillColor, messageTextColor, labelFillColor, labelTextColor string) {
 	const TEXT_MARGIN = 12
 	const FONT_SCALE_UP_FACTOR = 10
 
@@ -67,5 +67,5 @@ func WriteForTheBadge(w io.Writer, label, message, color string) {
 
 	svgWidth := labelRectWidth + messageRectWidth
 
-	forthebadge.WriteForTheBadgeMin(w, label, message, hasLabel, svgWidth, labelX, labelTextLength, messageX, messageTextLength, labelRectWidth, messageRectX, messageRectWidth, color)
+	forthebadge.WriteForTheBadgeMin(w, label, message, hasLabel, svgWidth, labelX, labelTextLength, messageX, messageTextLength, labelRectWidth, messageRectX, messageRectWidth, messageFillColor, messageTextColor, labelFillColor, labelTextColor)
 }

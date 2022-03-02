@@ -18,263 +18,384 @@ var (
 )
 
 //line forthebadge/for-the-badge.qtpl:1
-func StreamForTheBadge(qw422016 *qt422016.Writer, label string, message string, hasLabel bool, svgWidth float64, labelX float64, labelTextLength float64, messageX float64, messageTextLength float64, labelRectWidth float64, messageRectX float64, messageRectWidth float64, color string) {
-//line forthebadge/for-the-badge.qtpl:1
+func StreamForTheBadge(qw422016 *qt422016.Writer,
+	label string,
+	message string,
+	hasLabel bool,
+	svgWidth float64,
+	labelX float64,
+	labelTextLength float64,
+	messageX float64,
+	messageTextLength float64,
+	labelRectWidth float64,
+	messageRectX float64,
+	messageRectWidth float64,
+	messageFillColor string,
+	messageTextColor string,
+	labelFillColor string,
+	labelTextColor string,
+) {
+//line forthebadge/for-the-badge.qtpl:17
 	qw422016.N().S(`
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="`)
-//line forthebadge/for-the-badge.qtpl:2
+//line forthebadge/for-the-badge.qtpl:18
 	qw422016.N().F(svgWidth)
-//line forthebadge/for-the-badge.qtpl:2
+//line forthebadge/for-the-badge.qtpl:18
 	qw422016.N().S(`" height="28" role="img"
     aria-label="`)
-//line forthebadge/for-the-badge.qtpl:3
+//line forthebadge/for-the-badge.qtpl:19
 	qw422016.E().S(label)
-//line forthebadge/for-the-badge.qtpl:3
+//line forthebadge/for-the-badge.qtpl:19
 	qw422016.N().S(`: `)
-//line forthebadge/for-the-badge.qtpl:3
+//line forthebadge/for-the-badge.qtpl:19
 	qw422016.E().S(message)
-//line forthebadge/for-the-badge.qtpl:3
+//line forthebadge/for-the-badge.qtpl:19
 	qw422016.N().S(`">
     <title>`)
-//line forthebadge/for-the-badge.qtpl:4
+//line forthebadge/for-the-badge.qtpl:20
 	qw422016.E().S(label)
-//line forthebadge/for-the-badge.qtpl:4
+//line forthebadge/for-the-badge.qtpl:20
 	qw422016.N().S(`: `)
-//line forthebadge/for-the-badge.qtpl:4
+//line forthebadge/for-the-badge.qtpl:20
 	qw422016.E().S(message)
-//line forthebadge/for-the-badge.qtpl:4
+//line forthebadge/for-the-badge.qtpl:20
 	qw422016.N().S(`</title>
     <g shape-rendering="crispEdges">
         `)
-//line forthebadge/for-the-badge.qtpl:6
+//line forthebadge/for-the-badge.qtpl:22
 	if hasLabel {
-//line forthebadge/for-the-badge.qtpl:6
+//line forthebadge/for-the-badge.qtpl:22
 		qw422016.N().S(`
         <rect width="`)
-//line forthebadge/for-the-badge.qtpl:7
+//line forthebadge/for-the-badge.qtpl:23
 		qw422016.N().F(labelRectWidth)
-//line forthebadge/for-the-badge.qtpl:7
-		qw422016.N().S(`" height="28" fill="#555" />
-        <rect x="`)
-//line forthebadge/for-the-badge.qtpl:8
-		qw422016.N().F(messageRectX)
-//line forthebadge/for-the-badge.qtpl:8
-		qw422016.N().S(`" width="`)
-//line forthebadge/for-the-badge.qtpl:8
-		qw422016.N().F(messageRectWidth)
-//line forthebadge/for-the-badge.qtpl:8
+//line forthebadge/for-the-badge.qtpl:23
 		qw422016.N().S(`" height="28" fill="#`)
-//line forthebadge/for-the-badge.qtpl:8
-		qw422016.E().S(color)
-//line forthebadge/for-the-badge.qtpl:8
+//line forthebadge/for-the-badge.qtpl:23
+		qw422016.E().S(labelFillColor)
+//line forthebadge/for-the-badge.qtpl:23
+		qw422016.N().S(`" />
+        <rect x="`)
+//line forthebadge/for-the-badge.qtpl:24
+		qw422016.N().F(messageRectX)
+//line forthebadge/for-the-badge.qtpl:24
+		qw422016.N().S(`" width="`)
+//line forthebadge/for-the-badge.qtpl:24
+		qw422016.N().F(messageRectWidth)
+//line forthebadge/for-the-badge.qtpl:24
+		qw422016.N().S(`" height="28" fill="#`)
+//line forthebadge/for-the-badge.qtpl:24
+		qw422016.E().S(messageFillColor)
+//line forthebadge/for-the-badge.qtpl:24
 		qw422016.N().S(`" />
         `)
-//line forthebadge/for-the-badge.qtpl:9
+//line forthebadge/for-the-badge.qtpl:25
 	} else {
-//line forthebadge/for-the-badge.qtpl:9
+//line forthebadge/for-the-badge.qtpl:25
 		qw422016.N().S(`
         <rect width="`)
-//line forthebadge/for-the-badge.qtpl:10
+//line forthebadge/for-the-badge.qtpl:26
 		qw422016.N().F(messageRectWidth)
-//line forthebadge/for-the-badge.qtpl:10
+//line forthebadge/for-the-badge.qtpl:26
 		qw422016.N().S(`" height="28" fill="#`)
-//line forthebadge/for-the-badge.qtpl:10
-		qw422016.E().S(color)
-//line forthebadge/for-the-badge.qtpl:10
+//line forthebadge/for-the-badge.qtpl:26
+		qw422016.E().S(messageFillColor)
+//line forthebadge/for-the-badge.qtpl:26
 		qw422016.N().S(`" />
         `)
-//line forthebadge/for-the-badge.qtpl:11
+//line forthebadge/for-the-badge.qtpl:27
 	}
-//line forthebadge/for-the-badge.qtpl:11
+//line forthebadge/for-the-badge.qtpl:27
 	qw422016.N().S(`
     </g>
     <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif"
         text-rendering="geometricPrecision" font-size="100">
         `)
-//line forthebadge/for-the-badge.qtpl:15
+//line forthebadge/for-the-badge.qtpl:31
 	if hasLabel {
-//line forthebadge/for-the-badge.qtpl:15
+//line forthebadge/for-the-badge.qtpl:31
 		qw422016.N().S(`
         <text transform="scale(.1)" x="`)
-//line forthebadge/for-the-badge.qtpl:16
+//line forthebadge/for-the-badge.qtpl:32
 		qw422016.N().F(labelX)
-//line forthebadge/for-the-badge.qtpl:16
+//line forthebadge/for-the-badge.qtpl:32
 		qw422016.N().S(`" y="175" textLength="`)
-//line forthebadge/for-the-badge.qtpl:16
+//line forthebadge/for-the-badge.qtpl:32
 		qw422016.N().F(labelTextLength)
-//line forthebadge/for-the-badge.qtpl:16
-		qw422016.N().S(`" fill="#fff">`)
-//line forthebadge/for-the-badge.qtpl:16
+//line forthebadge/for-the-badge.qtpl:32
+		qw422016.N().S(`" fill="#`)
+//line forthebadge/for-the-badge.qtpl:32
+		qw422016.E().S(labelTextColor)
+//line forthebadge/for-the-badge.qtpl:32
+		qw422016.N().S(`">`)
+//line forthebadge/for-the-badge.qtpl:32
 		qw422016.E().S(label)
-//line forthebadge/for-the-badge.qtpl:16
+//line forthebadge/for-the-badge.qtpl:32
 		qw422016.N().S(`</text>
         `)
-//line forthebadge/for-the-badge.qtpl:17
+//line forthebadge/for-the-badge.qtpl:33
 	}
-//line forthebadge/for-the-badge.qtpl:17
+//line forthebadge/for-the-badge.qtpl:33
 	qw422016.N().S(`
         <text transform="scale(.1)" x="`)
-//line forthebadge/for-the-badge.qtpl:18
+//line forthebadge/for-the-badge.qtpl:34
 	qw422016.N().F(messageX)
-//line forthebadge/for-the-badge.qtpl:18
+//line forthebadge/for-the-badge.qtpl:34
 	qw422016.N().S(`" y="175" textLength="`)
-//line forthebadge/for-the-badge.qtpl:18
+//line forthebadge/for-the-badge.qtpl:34
 	qw422016.N().F(messageTextLength)
-//line forthebadge/for-the-badge.qtpl:18
-	qw422016.N().S(`" fill="#333" font-weight="bold">`)
-//line forthebadge/for-the-badge.qtpl:18
+//line forthebadge/for-the-badge.qtpl:34
+	qw422016.N().S(`" fill="#`)
+//line forthebadge/for-the-badge.qtpl:34
+	qw422016.E().S(messageTextColor)
+//line forthebadge/for-the-badge.qtpl:34
+	qw422016.N().S(`" font-weight="bold">`)
+//line forthebadge/for-the-badge.qtpl:34
 	qw422016.E().S(message)
-//line forthebadge/for-the-badge.qtpl:18
+//line forthebadge/for-the-badge.qtpl:34
 	qw422016.N().S(`</text>
     </g>
 </svg>
 `)
-//line forthebadge/for-the-badge.qtpl:21
+//line forthebadge/for-the-badge.qtpl:37
 }
 
-//line forthebadge/for-the-badge.qtpl:21
-func WriteForTheBadge(qq422016 qtio422016.Writer, label string, message string, hasLabel bool, svgWidth float64, labelX float64, labelTextLength float64, messageX float64, messageTextLength float64, labelRectWidth float64, messageRectX float64, messageRectWidth float64, color string) {
-//line forthebadge/for-the-badge.qtpl:21
+//line forthebadge/for-the-badge.qtpl:37
+func WriteForTheBadge(qq422016 qtio422016.Writer,
+	label string,
+	message string,
+	hasLabel bool,
+	svgWidth float64,
+	labelX float64,
+	labelTextLength float64,
+	messageX float64,
+	messageTextLength float64,
+	labelRectWidth float64,
+	messageRectX float64,
+	messageRectWidth float64,
+	messageFillColor string,
+	messageTextColor string,
+	labelFillColor string,
+	labelTextColor string,
+) {
+//line forthebadge/for-the-badge.qtpl:37
 	qw422016 := qt422016.AcquireWriter(qq422016)
-//line forthebadge/for-the-badge.qtpl:21
-	StreamForTheBadge(qw422016, label, message, hasLabel, svgWidth, labelX, labelTextLength, messageX, messageTextLength, labelRectWidth, messageRectX, messageRectWidth, color)
-//line forthebadge/for-the-badge.qtpl:21
+//line forthebadge/for-the-badge.qtpl:37
+	StreamForTheBadge(qw422016, label, message, hasLabel, svgWidth, labelX, labelTextLength, messageX, messageTextLength, labelRectWidth, messageRectX, messageRectWidth, messageFillColor, messageTextColor, labelFillColor, labelTextColor)
+//line forthebadge/for-the-badge.qtpl:37
 	qt422016.ReleaseWriter(qw422016)
-//line forthebadge/for-the-badge.qtpl:21
+//line forthebadge/for-the-badge.qtpl:37
 }
 
-//line forthebadge/for-the-badge.qtpl:21
-func ForTheBadge(label string, message string, hasLabel bool, svgWidth float64, labelX float64, labelTextLength float64, messageX float64, messageTextLength float64, labelRectWidth float64, messageRectX float64, messageRectWidth float64, color string) string {
-//line forthebadge/for-the-badge.qtpl:21
+//line forthebadge/for-the-badge.qtpl:37
+func ForTheBadge(
+	label string,
+	message string,
+	hasLabel bool,
+	svgWidth float64,
+	labelX float64,
+	labelTextLength float64,
+	messageX float64,
+	messageTextLength float64,
+	labelRectWidth float64,
+	messageRectX float64,
+	messageRectWidth float64,
+	messageFillColor string,
+	messageTextColor string,
+	labelFillColor string,
+	labelTextColor string,
+) string {
+//line forthebadge/for-the-badge.qtpl:37
 	qb422016 := qt422016.AcquireByteBuffer()
-//line forthebadge/for-the-badge.qtpl:21
-	WriteForTheBadge(qb422016, label, message, hasLabel, svgWidth, labelX, labelTextLength, messageX, messageTextLength, labelRectWidth, messageRectX, messageRectWidth, color)
-//line forthebadge/for-the-badge.qtpl:21
+//line forthebadge/for-the-badge.qtpl:37
+	WriteForTheBadge(qb422016, label, message, hasLabel, svgWidth, labelX, labelTextLength, messageX, messageTextLength, labelRectWidth, messageRectX, messageRectWidth, messageFillColor, messageTextColor, labelFillColor, labelTextColor)
+//line forthebadge/for-the-badge.qtpl:37
 	qs422016 := string(qb422016.B)
-//line forthebadge/for-the-badge.qtpl:21
+//line forthebadge/for-the-badge.qtpl:37
 	qt422016.ReleaseByteBuffer(qb422016)
-//line forthebadge/for-the-badge.qtpl:21
+//line forthebadge/for-the-badge.qtpl:37
 	return qs422016
-//line forthebadge/for-the-badge.qtpl:21
+//line forthebadge/for-the-badge.qtpl:37
 }
 
-//line forthebadge/for-the-badge.qtpl:24
-func StreamForTheBadgeMin(qw422016 *qt422016.Writer, label string, message string, hasLabel bool, svgWidth float64, labelX float64, labelTextLength float64, messageX float64, messageTextLength float64, labelRectWidth float64, messageRectX float64, messageRectWidth float64, color string) {
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:39
+func StreamForTheBadgeMin(qw422016 *qt422016.Writer,
+	label string,
+	message string,
+	hasLabel bool,
+	svgWidth float64,
+	labelX float64,
+	labelTextLength float64,
+	messageX float64,
+	messageTextLength float64,
+	labelRectWidth float64,
+	messageRectX float64,
+	messageRectWidth float64,
+	messageFillColor string,
+	messageTextColor string,
+	labelFillColor string,
+	labelTextColor string,
+) {
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().S(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().F(svgWidth)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().S(`" height="28" role="img" aria-label="`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.E().S(label)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().S(`: `)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.E().S(message)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().S(`"><title>`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.E().S(label)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().S(`: `)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.E().S(message)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().S(`</title><g shape-rendering="crispEdges">`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	if hasLabel {
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().S(`<rect width="`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().F(labelRectWidth)
-//line forthebadge/for-the-badge.qtpl:24
-		qw422016.N().S(`" height="28" fill="#555" /><rect x="`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
+		qw422016.N().S(`" height="28" fill="#`)
+//line forthebadge/for-the-badge.qtpl:55
+		qw422016.E().S(labelFillColor)
+//line forthebadge/for-the-badge.qtpl:55
+		qw422016.N().S(`" /><rect x="`)
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().F(messageRectX)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().S(`" width="`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().F(messageRectWidth)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().S(`" height="28" fill="#`)
-//line forthebadge/for-the-badge.qtpl:24
-		qw422016.E().S(color)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
+		qw422016.E().S(messageFillColor)
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().S(`" />`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	} else {
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().S(`<rect width="`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().F(messageRectWidth)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().S(`" height="28" fill="#`)
-//line forthebadge/for-the-badge.qtpl:24
-		qw422016.E().S(color)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
+		qw422016.E().S(messageFillColor)
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().S(`" />`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	}
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().S(`</g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="100">`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	if hasLabel {
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().S(`<text transform="scale(.1)" x="`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().F(labelX)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().S(`" y="175" textLength="`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().F(labelTextLength)
-//line forthebadge/for-the-badge.qtpl:24
-		qw422016.N().S(`" fill="#fff">`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
+		qw422016.N().S(`" fill="#`)
+//line forthebadge/for-the-badge.qtpl:55
+		qw422016.E().S(labelTextColor)
+//line forthebadge/for-the-badge.qtpl:55
+		qw422016.N().S(`">`)
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.E().S(label)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 		qw422016.N().S(`</text>`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	}
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().S(`<text transform="scale(.1)" x="`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().F(messageX)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().S(`" y="175" textLength="`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.N().F(messageTextLength)
-//line forthebadge/for-the-badge.qtpl:24
-	qw422016.N().S(`" fill="#333" font-weight="bold">`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
+	qw422016.N().S(`" fill="#`)
+//line forthebadge/for-the-badge.qtpl:55
+	qw422016.E().S(messageTextColor)
+//line forthebadge/for-the-badge.qtpl:55
+	qw422016.N().S(`" font-weight="bold">`)
+//line forthebadge/for-the-badge.qtpl:55
 	qw422016.E().S(message)
-//line forthebadge/for-the-badge.qtpl:24
-	qw422016.N().S(`</text></g></svg>`)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:55
+	qw422016.N().S(`</text></g></svg>
+`)
+//line forthebadge/for-the-badge.qtpl:56
 }
 
-//line forthebadge/for-the-badge.qtpl:24
-func WriteForTheBadgeMin(qq422016 qtio422016.Writer, label string, message string, hasLabel bool, svgWidth float64, labelX float64, labelTextLength float64, messageX float64, messageTextLength float64, labelRectWidth float64, messageRectX float64, messageRectWidth float64, color string) {
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:56
+func WriteForTheBadgeMin(qq422016 qtio422016.Writer,
+	label string,
+	message string,
+	hasLabel bool,
+	svgWidth float64,
+	labelX float64,
+	labelTextLength float64,
+	messageX float64,
+	messageTextLength float64,
+	labelRectWidth float64,
+	messageRectX float64,
+	messageRectWidth float64,
+	messageFillColor string,
+	messageTextColor string,
+	labelFillColor string,
+	labelTextColor string,
+) {
+//line forthebadge/for-the-badge.qtpl:56
 	qw422016 := qt422016.AcquireWriter(qq422016)
-//line forthebadge/for-the-badge.qtpl:24
-	StreamForTheBadgeMin(qw422016, label, message, hasLabel, svgWidth, labelX, labelTextLength, messageX, messageTextLength, labelRectWidth, messageRectX, messageRectWidth, color)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:56
+	StreamForTheBadgeMin(qw422016, label, message, hasLabel, svgWidth, labelX, labelTextLength, messageX, messageTextLength, labelRectWidth, messageRectX, messageRectWidth, messageFillColor, messageTextColor, labelFillColor, labelTextColor)
+//line forthebadge/for-the-badge.qtpl:56
 	qt422016.ReleaseWriter(qw422016)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:56
 }
 
-//line forthebadge/for-the-badge.qtpl:24
-func ForTheBadgeMin(label string, message string, hasLabel bool, svgWidth float64, labelX float64, labelTextLength float64, messageX float64, messageTextLength float64, labelRectWidth float64, messageRectX float64, messageRectWidth float64, color string) string {
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:56
+func ForTheBadgeMin(
+	label string,
+	message string,
+	hasLabel bool,
+	svgWidth float64,
+	labelX float64,
+	labelTextLength float64,
+	messageX float64,
+	messageTextLength float64,
+	labelRectWidth float64,
+	messageRectX float64,
+	messageRectWidth float64,
+	messageFillColor string,
+	messageTextColor string,
+	labelFillColor string,
+	labelTextColor string,
+) string {
+//line forthebadge/for-the-badge.qtpl:56
 	qb422016 := qt422016.AcquireByteBuffer()
-//line forthebadge/for-the-badge.qtpl:24
-	WriteForTheBadgeMin(qb422016, label, message, hasLabel, svgWidth, labelX, labelTextLength, messageX, messageTextLength, labelRectWidth, messageRectX, messageRectWidth, color)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:56
+	WriteForTheBadgeMin(qb422016, label, message, hasLabel, svgWidth, labelX, labelTextLength, messageX, messageTextLength, labelRectWidth, messageRectX, messageRectWidth, messageFillColor, messageTextColor, labelFillColor, labelTextColor)
+//line forthebadge/for-the-badge.qtpl:56
 	qs422016 := string(qb422016.B)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:56
 	qt422016.ReleaseByteBuffer(qb422016)
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:56
 	return qs422016
-//line forthebadge/for-the-badge.qtpl:24
+//line forthebadge/for-the-badge.qtpl:56
 }

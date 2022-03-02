@@ -1,24 +1,56 @@
-{% func ForTheBadge(label string, message string, hasLabel bool, svgWidth float64, labelX float64, labelTextLength float64, messageX float64, messageTextLength float64, labelRectWidth float64, messageRectX float64, messageRectWidth float64, color string) %}
+{% func ForTheBadge(
+    label string,
+    message string,
+    hasLabel bool,
+    svgWidth float64,
+    labelX float64,
+    labelTextLength float64,
+    messageX float64,
+    messageTextLength float64,
+    labelRectWidth float64,
+    messageRectX float64,
+    messageRectWidth float64,
+    messageFillColor string,
+    messageTextColor string,
+    labelFillColor string,
+    labelTextColor string,
+) %}
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{%f svgWidth %}" height="28" role="img"
     aria-label="{%s label %}: {%s message %}">
     <title>{%s label %}: {%s message %}</title>
     <g shape-rendering="crispEdges">
         {% if hasLabel %}
-        <rect width="{%f labelRectWidth %}" height="28" fill="#555" />
-        <rect x="{%f messageRectX %}" width="{%f messageRectWidth %}" height="28" fill="#{%s color %}" />
+        <rect width="{%f labelRectWidth %}" height="28" fill="#{%s labelFillColor %}" />
+        <rect x="{%f messageRectX %}" width="{%f messageRectWidth %}" height="28" fill="#{%s messageFillColor %}" />
         {% else %}
-        <rect width="{%f messageRectWidth %}" height="28" fill="#{%s color %}" />
+        <rect width="{%f messageRectWidth %}" height="28" fill="#{%s messageFillColor %}" />
         {% endif %}
     </g>
     <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif"
         text-rendering="geometricPrecision" font-size="100">
         {% if hasLabel %}
-        <text transform="scale(.1)" x="{%f labelX %}" y="175" textLength="{%f labelTextLength %}" fill="#fff">{%s label %}</text>
+        <text transform="scale(.1)" x="{%f labelX %}" y="175" textLength="{%f labelTextLength %}" fill="#{%s labelTextColor %}">{%s label %}</text>
         {% endif %}
-        <text transform="scale(.1)" x="{%f messageX %}" y="175" textLength="{%f messageTextLength %}" fill="#333" font-weight="bold">{%s message %}</text>
+        <text transform="scale(.1)" x="{%f messageX %}" y="175" textLength="{%f messageTextLength %}" fill="#{%s messageTextColor %}" font-weight="bold">{%s message %}</text>
     </g>
 </svg>
 {% endfunc %}
 
-
-{% func ForTheBadgeMin(label string, message string, hasLabel bool, svgWidth float64, labelX float64, labelTextLength float64, messageX float64, messageTextLength float64, labelRectWidth float64, messageRectX float64, messageRectWidth float64, color string) %}<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{%f svgWidth %}" height="28" role="img" aria-label="{%s label %}: {%s message %}"><title>{%s label %}: {%s message %}</title><g shape-rendering="crispEdges">{% if hasLabel %}<rect width="{%f labelRectWidth %}" height="28" fill="#555" /><rect x="{%f messageRectX %}" width="{%f messageRectWidth %}" height="28" fill="#{%s color %}" />{% else %}<rect width="{%f messageRectWidth %}" height="28" fill="#{%s color %}" />{% endif %}</g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="100">{% if hasLabel %}<text transform="scale(.1)" x="{%f labelX %}" y="175" textLength="{%f labelTextLength %}" fill="#fff">{%s label %}</text>{% endif %}<text transform="scale(.1)" x="{%f messageX %}" y="175" textLength="{%f messageTextLength %}" fill="#333" font-weight="bold">{%s message %}</text></g></svg>{% endfunc %}
+{% func ForTheBadgeMin(
+    label string,
+    message string,
+    hasLabel bool,
+    svgWidth float64,
+    labelX float64,
+    labelTextLength float64,
+    messageX float64,
+    messageTextLength float64,
+    labelRectWidth float64,
+    messageRectX float64,
+    messageRectWidth float64,
+    messageFillColor string,
+    messageTextColor string,
+    labelFillColor string,
+    labelTextColor string,
+) %}<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{%f svgWidth %}" height="28" role="img" aria-label="{%s label %}: {%s message %}"><title>{%s label %}: {%s message %}</title><g shape-rendering="crispEdges">{% if hasLabel %}<rect width="{%f labelRectWidth %}" height="28" fill="#{%s labelFillColor %}" /><rect x="{%f messageRectX %}" width="{%f messageRectWidth %}" height="28" fill="#{%s messageFillColor %}" />{% else %}<rect width="{%f messageRectWidth %}" height="28" fill="#{%s messageFillColor %}" />{% endif %}</g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="100">{% if hasLabel %}<text transform="scale(.1)" x="{%f labelX %}" y="175" textLength="{%f labelTextLength %}" fill="#{%s labelTextColor %}">{%s label %}</text>{% endif %}<text transform="scale(.1)" x="{%f messageX %}" y="175" textLength="{%f messageTextLength %}" fill="#{%s messageTextColor %}" font-weight="bold">{%s message %}</text></g></svg>
+{% endfunc %}
