@@ -1,6 +1,6 @@
 module github.com/lemon-mint/badge-renderers.go
 
-go 1.17
+go 1.18
 
 require (
 	github.com/go-www/silverlining v0.0.0-20220302124245-cd9bdba61796
